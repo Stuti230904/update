@@ -48,11 +48,11 @@ def admin():
     def submit():
         user = Username.get()
         pwd = Password.get()
+        Username.delete(0, 'end')
+        Password.delete(0, 'end')
 
         def close():
             new_screen.destroy()
-            Username.delete(0, 'end')
-            Password.delete(0, 'end')
 
         def clear():
             cur.execute("DROP TABLE SCORES")
